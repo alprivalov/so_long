@@ -1,0 +1,5 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/nfs/homes/alprival/so_long_rendu'
+gcc -g  srcs/so_long.o srcs/ft_parsing.o srcs/ft_structure_tree.o srcs/ft_structure_biomes.o srcs/ft_move_textures.o srcs/ft_move_check.o srcs/ft_init_texture_map.o srcs/ft_init_texture_map_two.o srcs/ft_init_texture_character.o srcs/ft_animation_player.o srcs/ft_init_texture_mobs.o srcs/ft_destroy_image_one.o srcs/ft_destroy_image_two.o srcs/ft_stone_wall_init.o srcs/ft_wall_init.o srcs/ft_check_texture.o srcs/ft_parse_texture_map.o srcs/ft_slimbiome_init.o srcs/ft_water_init.o srcs/ft_plains_init.o srcs/ft_init_texture_map_three.o srcs/ft_move_texture_chest.o srcs/ft_road_grass_slimebiome.o -L./libs/mlx -lmlx -L/usr/include/../lib -lXext -lX11 -lm -Llibs/libft/ -lft -o srcs/so_long
+make: Leaving directory '/nfs/homes/alprival/so_long_rendu'
+ 
