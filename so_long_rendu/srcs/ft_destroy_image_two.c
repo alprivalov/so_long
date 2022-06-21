@@ -21,8 +21,7 @@ void	ft_destroy_image_six(t_data *vars)
 	mlx_destroy_image(vars->mlx, vars->oiooiooio_mid_s_wl);
 	mlx_destroy_image(vars->mlx, vars->oiooioooo_s_wl);
 	mlx_destroy_image(vars->mlx, vars->ooooiooio_s_wl);
-	mlx_destroy_display(vars->mlx);
-	free(vars->mlx);
+	mlx_destroy_image(vars->mlx, vars->slime_road);
 }
 
 void	ft_destroy_all(t_data *vars)
@@ -33,4 +32,6 @@ void	ft_destroy_all(t_data *vars)
 	ft_destroy_image_four(vars);
 	ft_destroy_image_five(vars);
 	ft_destroy_image_six(vars);
+	mlx_destroy_display(vars->mlx);
+	free(vars->mlx);
 }

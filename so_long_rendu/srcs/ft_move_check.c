@@ -15,16 +15,7 @@
 void	ft_move_up(t_data *vars, int keycode)
 {
 	if (vars -> map[vars -> p_y - 1][vars -> p_x] == 'C')
-	{
-		if (vars -> map[vars -> p_y + 1][vars -> p_x] == 'M' ||
-		vars -> map[vars -> p_y - 1][vars -> p_x] == 'M' ||
-		vars -> map[vars -> p_y][vars -> p_x + 1] == 'M' ||
-		vars -> map[vars -> p_y][vars -> p_x + 1] == 'M')
-			ft_chest_slimbiome(vars, keycode);
-		else
-			ft_chests(vars, keycode);
-		return ;
-	}
+		ft_next_chest(vars, keycode);
 	else if (vars -> map[vars -> p_y - 1][vars -> p_x] == 'E'
 		&& vars -> n_chestopen == vars -> n_chests)
 		ft_exit(vars, keycode);
@@ -52,16 +43,7 @@ void	ft_move_up(t_data *vars, int keycode)
 void	ft_move_left(t_data *vars, int keycode)
 {
 	if (vars -> map[vars -> p_y][vars -> p_x - 1] == 'C')
-	{
-		if (vars -> map[vars -> p_y + 1][vars -> p_x] == 'M' ||
-		vars -> map[vars -> p_y - 1][vars -> p_x] == 'M' ||
-		vars -> map[vars -> p_y][vars -> p_x + 1] == 'M' ||
-		vars -> map[vars -> p_y][vars -> p_x + 1] == 'M')
-			ft_chest_slimbiome(vars, keycode);
-		else
-			ft_chests(vars, keycode);
-		return ;
-	}
+		ft_next_chest(vars, keycode);
 	else if (vars -> map[vars -> p_y][vars -> p_x - 1] == 'E' &&
 		vars -> n_chestopen == vars -> n_chests)
 		ft_exit(vars, keycode);
@@ -89,16 +71,7 @@ void	ft_move_left(t_data *vars, int keycode)
 void	ft_move_right(t_data *vars, int keycode)
 {
 	if (vars -> map[vars -> p_y][vars -> p_x + 1] == 'C')
-	{
-		if (vars -> map[vars -> p_y + 1][vars -> p_x] == 'M' ||
-		vars -> map[vars -> p_y - 1][vars -> p_x] == 'M' ||
-		vars -> map[vars -> p_y][vars -> p_x + 1] == 'M' ||
-		vars -> map[vars -> p_y][vars -> p_x + 1] == 'M')
-			ft_chest_slimbiome(vars, keycode);
-		else
-			ft_chests(vars, keycode);
-		return ;
-	}
+		ft_next_chest(vars, keycode);
 	else if (vars -> map[vars -> p_y][vars -> p_x + 1] == 'E' &&
 		vars -> n_chestopen == vars -> n_chests)
 		ft_exit(vars, keycode);
@@ -126,16 +99,7 @@ void	ft_move_right(t_data *vars, int keycode)
 void	ft_move_down(t_data *vars, int keycode)
 {
 	if (vars -> map[vars -> p_y + 1][vars -> p_x] == 'C')
-	{
-		if (vars -> map[vars -> p_y + 1][vars -> p_x] == 'M' ||
-		vars -> map[vars -> p_y - 1][vars -> p_x] == 'M' ||
-		vars -> map[vars -> p_y][vars -> p_x + 1] == 'M' ||
-		vars -> map[vars -> p_y][vars -> p_x + 1] == 'M')
-			ft_chest_slimbiome(vars, keycode);
-		else
-			ft_chests(vars, keycode);
-		return ;
-	}
+		ft_next_chest(vars, keycode);
 	else if (vars -> map[vars -> p_y + 1][vars -> p_x] == 'E' &&
 		vars -> n_chestopen == vars -> n_chests)
 		ft_exit(vars, keycode);
@@ -158,42 +122,4 @@ void	ft_move_down(t_data *vars, int keycode)
 		ft_player_wood(vars, keycode);
 	else if (vars -> map[vars -> p_y + 1][vars -> p_x] == '3')
 		ft_open_chest_slimbiome(vars, keycode);
-}
-
-int	ft_move(int keycode, t_data *vars)
-{
-	int	i;
-
-	i = 0;
-	if (vars->map[vars->p_y][vars->p_x] != 'E')
-	{
-		if (keycode == 65363 || keycode == 100)
-		{
-			ft_move_right(vars, keycode);
-			vars->move++;
-			printf("Move number %d\n", vars->move);
-		}
-		if (keycode == 65364 || keycode == 115)
-		{
-			ft_move_down(vars, keycode);
-			vars->move++;
-			printf("Move number %d\n", vars->move);
-		}
-		if (keycode == 65361 || keycode == 97)
-		{
-			ft_move_left(vars, keycode);
-			vars->move++;
-			printf("Move number %d\n", vars->move);
-		}
-		if (keycode == 65362 || keycode == 119)
-		{
-			ft_move_up(vars, keycode);
-			vars->move++;
-			printf("Move number %d\n", vars->move);
-		}
-	}
-	if (keycode == 65307)
-	{
-		ft_close_key(keycode, vars);
-	}
 }

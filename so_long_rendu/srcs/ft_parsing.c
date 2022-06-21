@@ -20,19 +20,15 @@ void	ft_init_vars(t_data *vars)
 	vars->lines = 0;
 	vars->colonnes = 0;
 	vars->frames = 0;
+	vars->e = 0;
+	vars->p = 0;
+	vars->c = 0;
 }
-
-int	ft_check_error_parsing(char *str, t_data *vars)
+int	ft_small_check(t_data *vars)
 {
-	int	len;
-
-	len = ft_strlen(str) - 1;
-	if (str != NULL && str[ft_strlen(str) - 1] == '\n')
-	{
-		if (vars->colonnes != len && str != NULL)
-			return (0);
-	}
-	else if (vars->colonnes - 1 != len && str != NULL)
+	if (vars->colonnes < 3)
+		return (0);
+	if (vars->lines < 3)
 		return (0);
 	return (1);
 }
@@ -41,9 +37,7 @@ int	ft_parsing_map(char *av, t_data *vars)
 {
 	char	*line;
 	int		fd;
-	int		i;
 
-	i = 0;
 	fd = open(av, O_RDONLY);
 	line = get_next_line(fd);
 	vars->colonnes = ft_strlen(line) - 1;
@@ -61,11 +55,9 @@ int	ft_parsing_map(char *av, t_data *vars)
 	}
 	free(line);
 	close(fd);
-	if (vars->colonnes < 3)
+	if(ft_small_check(vars) == 0)
 		return (0);
-	if (vars->lines < 3)
-		return (0);
-	return (1);
+	return(1);
 }
 
 void	ft_init_map(char *str, t_data *vars)

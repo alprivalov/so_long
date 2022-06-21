@@ -30,6 +30,8 @@ SOURCES_FILES	=	so_long.c \
 					ft_init_texture_map_three.c \
 					ft_move_texture_chest.c \
 					ft_road_grass_slimebiome.c \
+					ft_move.c \
+					ft_error.c \
 
 SOURCES_DIR		=	srcs
 BONUS_DIR		=	srcs_bonus

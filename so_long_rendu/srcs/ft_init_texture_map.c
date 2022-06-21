@@ -122,7 +122,6 @@ void	ft_init_texture(t_data *vars)
 	ft_init_wall(vars);
 	ft_init_water(vars);
 	ft_init_stone_wall(vars);
-	ft_init_stone_wall(vars);
 	ft_init_plains(vars);
 	ft_init_slimbiome(vars);
 	ft_init_tree(vars);

@@ -18,7 +18,7 @@ void	ft_slimbiome_init(t_data *vars, int y, int x)
 		&& ft_int_sb(vars, y, x + 1) && ft_int_sb(vars, y, x - 1))
 		mlx_put_image_to_window(vars->mlx, vars->win,
 			vars->iiiiiiiii_sb, IMG * x, IMG * y);
-	else if (vars->map[y - 1][x] == 'M' && vars->map[y][x + 1] == 'G' &&
+	else if (ft_int_sb(vars,y - 1, x) && vars->map[y][x + 1] == 'G' &&
 	vars->map[y][x - 1] == 'G' && ft_ext_sb(vars, y + 1, x))
 		mlx_put_image_to_window(vars->mlx, vars->win,
 			vars->iiiiiiooo_sb, IMG * x, IMG * y);

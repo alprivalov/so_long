@@ -23,6 +23,7 @@ typedef struct s_data {
 	void	*win;
 	char	**map;
 	void	*slime;
+	void	*slime_road;
 
 	void	*player;
 	void	*chest_player;
@@ -55,7 +56,7 @@ typedef struct s_data {
 	void	*r_p_sb_[6];
 
 	void	*g_p_sb[6];
-	
+
 	void	*log;
 	void	*long_r_log;
 	void	*long_l_log;
@@ -135,14 +136,17 @@ typedef struct s_data {
 	void	*oiooiooio_mid_s_wl;
 	void	*oiooioooo_s_wl;
 	void	*ooooiooio_s_wl;
-
+	int		p;
+	int		error;
+	int		c;
+	int		e;
 	int		move;
 	int		n_chests;
 	int		n_chestopen;
 	int		p_x;
 	int		p_y;
 	int		lines;
-	int 	frames;
+	int		frames;
 	int		colonnes;
 
 }				t_data;
@@ -150,6 +154,7 @@ typedef struct s_data {
 void	ft_init_vars(t_data *vars);
 int		ft_parsing_map(char *av, t_data *vars);
 void	ft_init_map(char *str, t_data *vars);
+int		ft_check_name_file(char *str);
 void	ft_init_map_texture(t_data *vars);
 void	ft_grass(t_data *vars, int keycode);
 void	ft_road(t_data *vars, int keycode);
@@ -157,13 +162,15 @@ void	ft_exit(t_data *vars, int keycode);
 void	ft_chests(t_data *vars, int keycode);
 void	ft_open_chest(t_data *vars, int keycode);
 void	ft_move_up(t_data *vars, int keycode);
+int		ft_move(int keycode, t_data *vars);
 void	ft_move_left(t_data *vars, int keycode);
 void	ft_move_right(t_data *vars, int keycode);
 void	ft_move_down(t_data *vars, int keycode);
-int		ft_move(int keycode, t_data *vars);
 int		ft_maison(char**map, t_data *vars, int y, int x);
 void	ft_move_player(t_data *vars);
 void	ft_init_texture(t_data *vars);
+int		ft_error_parsing(t_data *vars);
+int		checks_error_argument(int ac, char * str);
 void	ft_road_slimebiome(t_data *vars, int keycode);
 int		ft_ext_sb(t_data *vars, int y, int x);
 void	ft_grass_slimebiome(t_data *vars, int keycode);
@@ -172,10 +179,12 @@ void	ft_player_wood(t_data *vars, int keycode);
 void	ft_init_wall(t_data *vars);
 void	ft_init_water(t_data *vars);
 void	ft_init_stone_wall(t_data *vars);
+int		ft_error(t_data *vars);
 void	ft_init_plains(t_data *vars);
 void	ft_init_texture(t_data *vars);
 void	ft_init_decors(t_data *vars);
 void	ft_init_slimbiome(t_data *vars);
+int		ft_check_error_parsing(char *str, t_data *vars);
 void	ft_init_tree(t_data *vars);
 void	ft_init_others(t_data *vars);
 void	ft_init_decors_two(t_data *vars);
@@ -235,4 +244,6 @@ void	ft_init_others_two(t_data *vars);
 void	ft_chest_slimbiome(t_data *vars, int keycode);
 void	ft_move_player(t_data *vars);
 void	ft_move_key(int keycode, t_data *vars);
+void	ft_next_chest(t_data *vars, int keycode);
+void	ft_check_texture_five(t_data *vars, int y, int x);
 #endif

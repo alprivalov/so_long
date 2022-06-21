@@ -19,4 +19,6 @@ void	ft_init_slime(t_data *vars)
 
 	vars->slime = mlx_xpm_file_to_image(vars->mlx,
 			"../img/slime/slime.xpm", &img_width, &img_height);
+	vars->slime_road = mlx_xpm_file_to_image(vars->mlx,
+			"../img/slime/slime_road.xpm", &img_width, &img_height);
 }

@@ -9,7 +9,7 @@
 			"type": "cppdbg",
 			"request": "launch",
 			"program": "${workspaceFolder}/srcs/so_long",
-			"args": ["${workspaceFolder}/maps/map.ber"],
+			"args": ["${workspaceFolder}/maps/map_error_colonnes.ber"],
 			"stopAtEntry": false,
 			"cwd": "${fileDirname}",
 			"environment": [],

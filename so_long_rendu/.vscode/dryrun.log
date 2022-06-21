@@ -1,5 +1,77 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/nfs/homes/alprival/so_long_rendu'
-gcc -g  srcs/so_long.o srcs/ft_parsing.o srcs/ft_structure_tree.o srcs/ft_structure_biomes.o srcs/ft_move_textures.o srcs/ft_move_check.o srcs/ft_init_texture_map.o srcs/ft_init_texture_map_two.o srcs/ft_init_texture_character.o srcs/ft_animation_player.o srcs/ft_init_texture_mobs.o srcs/ft_destroy_image_one.o srcs/ft_destroy_image_two.o srcs/ft_stone_wall_init.o srcs/ft_wall_init.o srcs/ft_check_texture.o srcs/ft_parse_texture_map.o srcs/ft_slimbiome_init.o srcs/ft_water_init.o srcs/ft_plains_init.o srcs/ft_init_texture_map_three.o srcs/ft_move_texture_chest.o srcs/ft_road_grass_slimebiome.o -L./libs/mlx -lmlx -L/usr/include/../lib -lXext -lX11 -lm -Llibs/libft/ -lft -o srcs/so_long
+make -C ./libs/libft
+ 
+make[1]: Entering directory '/nfs/homes/alprival/so_long_rendu/libs/libft'
+gcc -g -Werror -Wextra -Wall    -c -o ft_calloc.o ft_calloc.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_isascii.o ft_isascii.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_itoa.o ft_itoa.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_memcmp.o ft_memcmp.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_memset.o ft_memset.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_putnbr_fd.o ft_putnbr_fd.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_strchr.o ft_strchr.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_strlcpy.o ft_strlcpy.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_strncmp.o ft_strncmp.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_strtrim.o ft_strtrim.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_toupper.o ft_toupper.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_atoi.o ft_atoi.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_isalnum.o ft_isalnum.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_isdigit.o ft_isdigit.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_memcpy.o ft_memcpy.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_putchar_fd.o ft_putchar_fd.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_putstr_fd.o ft_putstr_fd.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_strdup.o ft_strdup.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_strjoin.o ft_strjoin.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_strlen.o ft_strlen.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_strnstr.o ft_strnstr.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_substr.o ft_substr.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_bzero.o ft_bzero.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_isalpha.o ft_isalpha.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_isprint.o ft_isprint.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_memchr.o ft_memchr.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_memmove.o ft_memmove.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_putendl_fd.o ft_putendl_fd.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_split.o ft_split.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_striteri.o ft_striteri.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_strlcat.o ft_strlcat.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_strmapi.o ft_strmapi.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_strrchr.o ft_strrchr.c
+gcc -g -Werror -Wextra -Wall    -c -o ft_tolower.o ft_tolower.c
+gcc -g -Werror -Wextra -Wall    -c -o get_next_line.o get_next_line.c
+gcc -g -Werror -Wextra -Wall    -c -o get_next_line_utils.o get_next_line_utils.c
+ar rcs libft.a ft_calloc.o ft_isascii.o ft_itoa.o ft_memcmp.o ft_memset.o ft_putnbr_fd.o ft_strchr.o ft_strlcpy.o ft_strncmp.o ft_strtrim.o ft_toupper.o ft_atoi.o ft_isalnum.o ft_isdigit.o ft_memcpy.o ft_putchar_fd.o ft_putstr_fd.o ft_strdup.o ft_strjoin.o ft_strlen.o ft_strnstr.o ft_substr.o ft_bzero.o ft_isalpha.o ft_isprint.o ft_memchr.o ft_memmove.o ft_putendl_fd.o ft_split.o ft_striteri.o ft_strlcat.o ft_strmapi.o ft_strrchr.o ft_tolower.o get_next_line.o get_next_line_utils.o
+make[1]: Leaving directory '/nfs/homes/alprival/so_long_rendu/libs/libft'
+make -C ./libs/mlx
+ 
+make[1]: Entering directory '/nfs/homes/alprival/so_long_rendu/libs/mlx'
+./configure
+make[1]: Leaving directory '/nfs/homes/alprival/so_long_rendu/libs/mlx'
+ 
+gcc -g  -c srcs/so_long.c -o srcs/so_long.o
+gcc -g  -c srcs/ft_parsing.c -o srcs/ft_parsing.o
+gcc -g  -c srcs/ft_structure_tree.c -o srcs/ft_structure_tree.o
+gcc -g  -c srcs/ft_structure_biomes.c -o srcs/ft_structure_biomes.o
+gcc -g  -c srcs/ft_move_textures.c -o srcs/ft_move_textures.o
+gcc -g  -c srcs/ft_move_check.c -o srcs/ft_move_check.o
+gcc -g  -c srcs/ft_init_texture_map.c -o srcs/ft_init_texture_map.o
+gcc -g  -c srcs/ft_init_texture_map_two.c -o srcs/ft_init_texture_map_two.o
+gcc -g  -c srcs/ft_init_texture_character.c -o srcs/ft_init_texture_character.o
+gcc -g  -c srcs/ft_animation_player.c -o srcs/ft_animation_player.o
+gcc -g  -c srcs/ft_init_texture_mobs.c -o srcs/ft_init_texture_mobs.o
+gcc -g  -c srcs/ft_destroy_image_one.c -o srcs/ft_destroy_image_one.o
+gcc -g  -c srcs/ft_destroy_image_two.c -o srcs/ft_destroy_image_two.o
+gcc -g  -c srcs/ft_stone_wall_init.c -o srcs/ft_stone_wall_init.o
+gcc -g  -c srcs/ft_wall_init.c -o srcs/ft_wall_init.o
+gcc -g  -c srcs/ft_check_texture.c -o srcs/ft_check_texture.o
+gcc -g  -c srcs/ft_parse_texture_map.c -o srcs/ft_parse_texture_map.o
+gcc -g  -c srcs/ft_slimbiome_init.c -o srcs/ft_slimbiome_init.o
+gcc -g  -c srcs/ft_water_init.c -o srcs/ft_water_init.o
+gcc -g  -c srcs/ft_plains_init.c -o srcs/ft_plains_init.o
+gcc -g  -c srcs/ft_init_texture_map_three.c -o srcs/ft_init_texture_map_three.o
+gcc -g  -c srcs/ft_move_texture_chest.c -o srcs/ft_move_texture_chest.o
+gcc -g  -c srcs/ft_road_grass_slimebiome.c -o srcs/ft_road_grass_slimebiome.o
+gcc -g  -c srcs/ft_move.c -o srcs/ft_move.o
+gcc -g  -c srcs/ft_error.c -o srcs/ft_error.o
+gcc -g  srcs/so_long.o srcs/ft_parsing.o srcs/ft_structure_tree.o srcs/ft_structure_biomes.o srcs/ft_move_textures.o srcs/ft_move_check.o srcs/ft_init_texture_map.o srcs/ft_init_texture_map_two.o srcs/ft_init_texture_character.o srcs/ft_animation_player.o srcs/ft_init_texture_mobs.o srcs/ft_destroy_image_one.o srcs/ft_destroy_image_two.o srcs/ft_stone_wall_init.o srcs/ft_wall_init.o srcs/ft_check_texture.o srcs/ft_parse_texture_map.o srcs/ft_slimbiome_init.o srcs/ft_water_init.o srcs/ft_plains_init.o srcs/ft_init_texture_map_three.o srcs/ft_move_texture_chest.o srcs/ft_road_grass_slimebiome.o srcs/ft_move.o srcs/ft_error.o -L./libs/mlx -lmlx -L/usr/include/../lib -lXext -lX11 -lm -Llibs/libft/ -lft -o srcs/so_long
 make: Leaving directory '/nfs/homes/alprival/so_long_rendu'
  

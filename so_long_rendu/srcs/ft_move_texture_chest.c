@@ -50,3 +50,14 @@ void	ft_open_chest_slimbiome(t_data *vars, int keycode)
 		vars->chest_p_sb,
 		IMG * vars->p_x, IMG * vars->p_y);
 }
+
+void	ft_next_chest(t_data *vars, int keycode)
+{
+	if (vars -> map[vars -> p_y + 1][vars -> p_x] == 'M' ||
+	vars -> map[vars -> p_y - 1][vars -> p_x] == 'M' ||
+	vars -> map[vars -> p_y][vars -> p_x + 1] == 'M' ||
+	vars -> map[vars -> p_y][vars -> p_x + 1] == 'M')
+		ft_chest_slimbiome(vars, keycode);
+	else
+		ft_chests(vars, keycode);
+}

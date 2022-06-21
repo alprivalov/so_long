@@ -29,23 +29,6 @@ int	ft_close_key(int keycode, t_data *vars)
 	return (0);
 }
 
-int	ft_error(t_data *vars)
-{
-	int	i;
-
-	i = 0;
-	printf("map error\n");
-	while (i >= 0)
-	{	
-		free(vars->map[i]);
-		i--;
-	}
-	free(vars->map);
-	ft_destroy_all(vars);
-	exit(0);
-	return (0);
-}
-
 int	ft_close_mouse(t_data *vars)
 {
 	int	i;
@@ -62,28 +45,23 @@ int	ft_close_mouse(t_data *vars)
 	exit(0);
 	return (0);
 }
-
 int	main(int ac, char **av)
 {
 	t_data	vars;
 	char	*line;
 
-	vars.mlx = mlx_init();
+	if(checks_error_argument(ac,av[1]) == 0)
+		return(0);
 	ft_init_vars(&vars);
-	if (ac != 2)
+	if(ft_parsing_map(av[1], &vars) == 0)
 	{
-		printf("please put map\n");
-		ft_destroy_all(&vars);
-		return (0);
+		printf("wrong map\n");
+		return(0);
 	}
-	if (ft_parsing_map(av[1], &vars) == 0)
-	{
-		printf("invalid map");
-		ft_destroy_all(&vars);
-		return (0);
-	}
+	vars.mlx = mlx_init();
 	vars.win = mlx_new_window(vars.mlx, IMG * vars.colonnes,
 			IMG * vars.lines, "Hello world!");
+	ft_init_texture(&vars);
 	ft_init_map(av[1], &vars);
 	ft_init_map_texture(&vars);
 	mlx_loop_hook(vars.mlx, ft_player_anim, &vars);

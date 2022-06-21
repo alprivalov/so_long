@@ -22,6 +22,13 @@ void	ft_move_key(int keycode, t_data *vars)
 		vars->p_x--;
 	if (keycode == 65362 || keycode == 119)
 		vars->p_y--;
+	if ((keycode == 65362 || keycode == 119) || (keycode == 65361
+			|| keycode == 97) || (keycode == 65364 || keycode == 115)
+		|| (keycode == 65363 || keycode == 100))
+	{
+		vars->move++;
+		printf("Move number %d\n", vars->move);
+	}
 }
 
 void	ft_exit(t_data *vars, int keycode)
